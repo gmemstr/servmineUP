@@ -1,0 +1,50 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	background: #eee;
+	color: #333;
+	font: 16px Sans-Serif;
+	padding: 50px;
+	text-align: center;
+}
+h1
+{
+	font-size: 2.8em;
+	padding: 8px;
+	text-align: center;
+	font-family: 'Architects Daughter', cursive;
+	text-decoration: none;
+}
+h2
+{
+	font-size: 1.3em;
+	padding: 0 0 12px;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+p
+{
+	font-family: 'Roboto', sans-serif;
+}
+a
+{
+	text-decoration: none;
+	color: red;
+	font-style: italic;
+}
+button{
+	color: #900;
+	font-weight: bold;
+	border: 1px solid;		
+	border-radius: 1000px;
+	padding: 3px 7px;
+}
+input{
+	padding:3px 7px;
+	border-radius: 1000px;
+	border:1px solid;
+}
