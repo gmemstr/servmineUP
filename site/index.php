@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>servmineUP</title>
-  <link rel="stylesheet" href=".styles.css">	
+  <link rel="stylesheet" href="/style/styles.css">	
 <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
@@ -32,6 +32,7 @@
         $Query = new Ping( $_GET['srv'], $_GET['port']);
 
         echo "Current status: <font color=green>ONLINE</font>";
+        $nullSrv = false;
 
         if($_GET['port'] == 443){
           echo " <font color=purple>(using ssl)</font>";
@@ -47,6 +48,7 @@
       if ($_GET['srv'] == null || $_GET['port'] == null){
         echo "<font color=blue>Please enter an IP (or URL) & Port<br>
         <a href='http://portforward.com/cports.htm' target='_blank'>port cheat sheet</a> </font>";
+        $nullSrv = true;
       }
       else{
         echo "Current status: <font color=red>OFFLINE</font>";
@@ -65,8 +67,16 @@
 <br>
   <!--<p><a href="how.php">How it works</a></p>-->
   <br>
+  <p><?php
+  if ($nullSrv == false){
+    echo '<a href="embed.php?srv='.$_GET['srv'] . '&port=' . $_GET['port'] . '">';
+    }
+    else{}
+
+  ?>Embed this image</a></p>
   <p>Want this page for your  own site? Contact @gmemstr on Twitter.</p>
   <p>~gabriel simmer</p> 
+
 
 </body>
 
