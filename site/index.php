@@ -31,27 +31,20 @@
       //If it's online
         $Query = new Ping( $_GET['srv'], $_GET['port']);
 
-        echo "Current status: <font color=green>ONLINE</font>";
+        echo "Current status:<div id='on'>ONLINE</div>";
         $nullSrv = false;
-
-        if($_GET['port'] == 443){
-          echo " <font color=purple>(using ssl)</font>";
-        }
-        if($_GET['port'] == 80){
-          echo " <font color=purple>(using http)</font>";
-        }
 
         $Query->Close();
     }
     catch( PingException $e )
     {
       if ($_GET['srv'] == null || $_GET['port'] == null){
-        echo "<font color=blue>Please enter an IP (or URL) & Port<br>
-        <a href='http://portforward.com/cports.htm' target='_blank'>port cheat sheet</a> </font>";
+        echo "Please enter an IP (or URL) and Port<br>
+        <a href='http://portforward.com/cports.htm' target='_blank'>Common Ports</a>";
         $nullSrv = true;
       }
       else{
-        echo "Current status: <font color=red>OFFLINE</font>";
+        echo "Current status:<div id='off'>OFFLINE</div>";
       }
     }
     
@@ -60,7 +53,7 @@
   </h2>
   <br>
   <form>
-    IP: <input type="text" name="srv"> Port: <input type="number" name="port" min="1" max="65535">
+    IP: <input type="text" name="srv" value="google.com"> Port: <input type="number" name="port" min="1" max="65535" value="80">
 
     <button type="submit" value="Check">Check</button>
   </form>
@@ -77,6 +70,16 @@
   <p>Want this page for your  own site? Contact @gmemstr on Twitter.</p>
   <p>~gabriel simmer</p> 
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- My Computer.gabrielsimmer.com -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1095565361439571"
+     data-ad-slot="1901201639"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 </body>
 
